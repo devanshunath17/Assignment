@@ -1,4 +1,4 @@
-package com.app.assignmenttest.adapter;
+package com.app.assignmenttest.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.assignmenttest.R;
-import com.app.assignmenttest.model.DescOfFacts;
+import com.app.assignmenttest.Model.DescOfFacts;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 

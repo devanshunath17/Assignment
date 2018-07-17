@@ -1,4 +1,4 @@
-package com.app.assignmenttest.model;
+package com.app.assignmenttest.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

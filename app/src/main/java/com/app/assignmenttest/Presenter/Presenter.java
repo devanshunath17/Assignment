@@ -1,13 +1,17 @@
-package registration.testing.firebase.com.retrofitmvp.Core;
+package com.app.assignmenttest.Presenter;
 
 import android.content.Context;
 
-import java.util.List;
+import com.app.assignmenttest.Model.DescOfFacts;
 
-import registration.testing.firebase.com.retrofitmvp.Model.CountryRes;
+import java.util.ArrayList;
+
+
+
+
 
 /**
- * Created by Ashish on 28-09-2017.
+ * Created by Devanshu Nath Tripathi on 17/7/18.
  */
 
 public class Presenter implements GetDataContract.Presenter, GetDataContract.onGetDataListener {
@@ -23,8 +27,8 @@ public class Presenter implements GetDataContract.Presenter, GetDataContract.onG
     }
 
     @Override
-    public void onSuccess(String message, List<CountryRes> allCountriesData) {
-        mGetDataView.onGetDataSuccess(message, allCountriesData);
+    public void onSuccess(String message, ArrayList<DescOfFacts> allCountriesData,String title) {
+        mGetDataView.onGetDataSuccess(message, allCountriesData ,title);
     }
 
     @Override

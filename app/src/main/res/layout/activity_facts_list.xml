@@ -22,22 +22,23 @@
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/lytTopBar">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/simpleSwipeRefreshLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+            <!--android:id="@+id/simpleSwipeRefreshLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/factsList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                />
-        </android.support.v4.widget.SwipeRefreshLayout>
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/factsList"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--/>-->
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 
 
         <ProgressBar

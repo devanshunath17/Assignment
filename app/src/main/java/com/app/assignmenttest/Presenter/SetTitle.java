@@ -5,4 +5,5 @@ package com.app.assignmenttest.Presenter;
  */
 
 public interface SetTitle {
+    void onTitle(String Title);
 }

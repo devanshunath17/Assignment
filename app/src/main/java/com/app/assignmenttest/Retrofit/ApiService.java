@@ -1,17 +1,18 @@
-package com.app.assignmenttest.retrofit;
+package com.app.assignmenttest.Retrofit;
 
 
-import com.app.assignmenttest.model.NameOfFacts;
+import com.app.assignmenttest.Model.NameOfFacts;
+import com.app.assignmenttest.Utils.StaticData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 /**
- * Created by oem on 13/6/17.
+ * Created by Devanshu Nath Tripathi on 17/7/18.
  */
 
 public interface ApiService {
 
-    @GET("facts.json")
+    @GET(StaticData.GET_LIST)
     Call<NameOfFacts> getFacts();
 }
