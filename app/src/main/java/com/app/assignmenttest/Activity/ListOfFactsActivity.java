@@ -14,11 +14,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.assignmenttest.adapter.AdapterofFactsActivity;
-import com.app.assignmenttest.model.DescOfFacts;
-import com.app.assignmenttest.model.NameOfFacts;
-import com.app.assignmenttest.retrofit.ApiClient;
-import com.app.assignmenttest.retrofit.ApiService;
+import com.app.assignmenttest.Adapter.AdapterofFactsActivity;
+import com.app.assignmenttest.Model.DescOfFacts;
+import com.app.assignmenttest.Model.NameOfFacts;
+import com.app.assignmenttest.Presenter.GetDataContract;
+import com.app.assignmenttest.Presenter.Presenter;
+import com.app.assignmenttest.Retrofit.ApiClient;
+import com.app.assignmenttest.Retrofit.ApiService;
 
 import java.util.ArrayList;
 
@@ -26,7 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ListOfFactsActivity extends AppCompatActivity {
+public class ListOfFactsActivity extends AppCompatActivity implements GetDataContract.View{
 
     private SwipeRefreshLayout swipeRefreshLayout;
     private TextView textView;
@@ -35,13 +37,15 @@ public class ListOfFactsActivity extends AppCompatActivity {
     private AdapterofFactsActivity mAdapter;
     private ProgressBar progress;
     private ActionBar actionBar;
+    private Presenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts_list);
         inItView();
-        currencyList();
+
+        //currencyList();
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -73,6 +77,9 @@ public class ListOfFactsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
+
+        mPresenter = new Presenter(this);
+        mPresenter.getDataFromURL(getApplicationContext(), "");
     }
 
 
@@ -106,5 +113,23 @@ public class ListOfFactsActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onGetDataSuccess(String message, ArrayList<DescOfFacts> list) {
+       // actionBar.setTitle(response.body().getTitle());
+        factsList.clear();
+        factsList = list;
+        mAdapter = new AdapterofFactsActivity(ListOfFactsActivity.this, factsList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onGetDataFailure(String message) {
+        Toast.makeText(ListOfFactsActivity.this, getResources().getString(R.string.error), Toast.LENGTH_LONG).show();
+
     }
 }
