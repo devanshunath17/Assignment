@@ -51,7 +51,7 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
 
 
     /*
-   * here we set the Id
+   * here we define  the Id
    * */
     private void inItView(View view) {
 
@@ -85,7 +85,9 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
 
     }
 
-
+/*
+* After getting the success result
+* */
     @Override
     public void onGetDataSuccess(String message, ArrayList<DescOfFacts> list, String title) {
         progress.setVisibility(View.GONE);
@@ -99,7 +101,9 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
         ((ListOfFactsActivity)getActivity()).onTitle(title);
 
     }
-
+    /*
+    * After getting the Failure result
+    * */
     @Override
     public void onGetDataFailure(String message) {
         progress.setVisibility(View.GONE);

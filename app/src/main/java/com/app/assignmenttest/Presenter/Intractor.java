@@ -19,14 +19,15 @@ import retrofit2.Response;
  * Created by Devanshu Nath Tripathi on 17/7/18.
  */
 
-public class Intractor implements GetDataContract.Interactor{
+public class Intractor implements GetDataContract.Interactor {
     private GetDataContract.onGetDataListener mOnGetDatalistener;
     ArrayList<DescOfFacts> factsList = new ArrayList<>();
 
 
-    public Intractor(GetDataContract.onGetDataListener mOnGetDatalistener){
+    public Intractor(GetDataContract.onGetDataListener mOnGetDatalistener) {
         this.mOnGetDatalistener = mOnGetDatalistener;
     }
+
     @Override
     public void initRetrofitCall(Context context, String url) {
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
@@ -35,16 +36,16 @@ public class Intractor implements GetDataContract.Interactor{
             @Override
             public void onResponse(Call<NameOfFacts> call, Response<NameOfFacts> response) {
 
-                factsList=response.body().getRows();
+                factsList = response.body().getRows();
                 Log.d("Data", "Refreshed");
-                mOnGetDatalistener.onSuccess("List Size: " + factsList.size(), factsList,response.body().getTitle());
+                mOnGetDatalistener.onSuccess("List Size: " + factsList.size(), factsList, response.body().getTitle());
 
 
             }
 
             @Override
             public void onFailure(Call<NameOfFacts> call, Throwable t) {
-                Log.v("Error",t.getMessage());
+                Log.v("Error", t.getMessage());
                 mOnGetDatalistener.onFailure(t.getMessage());
             }
         });
