@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.assignmenttest.R;
 import com.app.assignmenttest.Model.DescOfFacts;
+import com.app.assignmenttest.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -59,7 +59,8 @@ public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsA
         holder.title.setText(facts.getTitle());
         if (!TextUtils.isEmpty(facts.getDescription()))
             holder.txtdescription.setText(facts.getDescription().toString().trim());
-
+/*for displaying the Image
+* */
         Glide.with(mcontaxt).load(facts.getImageHref())
                 .thumbnail(0.5f)
                 .crossFade()

@@ -45,13 +45,13 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_list, container, false);
         inItView(view);
+        callApi();
         return view;
     }
 
 
-
     /*
-   * here we define  the Id
+   * here we define  the each  Id
    * */
     private void inItView(View view) {
 
@@ -60,10 +60,9 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
         progress = (ProgressBar) view.findViewById(R.id.progress);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 
-        progress.setVisibility(View.VISIBLE);
-        mPresenter = new Presenter(this);
-        mPresenter.getDataFromURL(getActivity(), "");
 
+/*for refreshing the List
+* */
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -75,8 +74,7 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
                         // cancle the Visual indication of a refresh
                         swipeRefreshLayout.setRefreshing(false);
 
-                        mPresenter = new Presenter(ListOfFactsFragment.this);
-                        mPresenter.getDataFromURL(getActivity(), "");
+                        callApi();
                     }
                 }, 3000);
             }
@@ -85,9 +83,18 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
 
     }
 
-/*
-* After getting the success result
-* */
+    /*Method for getting list from given Url.
+    we  can pas the Url by this Method . but i am pasing in getClient method from ApiClient Class in Retrofit package.
+    * */
+    private void callApi() {
+        progress.setVisibility(View.VISIBLE);
+        mPresenter = new Presenter(this);
+        mPresenter.getDataFromURL(getActivity(), "");
+    }
+
+    /*
+    * After getting the success result
+    * */
     @Override
     public void onGetDataSuccess(String message, ArrayList<DescOfFacts> list, String title) {
         progress.setVisibility(View.GONE);
@@ -98,9 +105,10 @@ public class ListOfFactsFragment extends Fragment implements GetDataContract.Vie
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-        ((ListOfFactsActivity)getActivity()).onTitle(title);
+        ((ListOfFactsActivity) getActivity()).onTitle(title);
 
     }
+
     /*
     * After getting the Failure result
     * */

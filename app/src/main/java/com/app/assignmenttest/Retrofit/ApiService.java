@@ -12,7 +12,9 @@ import retrofit2.http.GET;
  */
 
 public interface ApiService {
-
+/*
+* call api for geting the List
+* */
     @GET(StaticData.GET_LIST)
     Call<NameOfFacts> getFacts();
 }

@@ -36,6 +36,8 @@ public class ListOfFactsActivity extends AppCompatActivity implements SetTitle {
 
     }
 
+    /* common method replace the fragment
+    * */
     protected void replaceFragment(@IdRes int container, Fragment fragment, String tag) {
         getFragmentManager().beginTransaction().replace(container, fragment, tag).addToBackStack(null).commit();
 
