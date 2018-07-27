@@ -4,11 +4,17 @@ This is a demo project to demonstrate the Recycler View  using Retrofit and to s
 The MVP Designe pattern allows separate the presentation layer from the logic , so that everything about how the interface works is separated from how we represent it on screen. Ideally the MVP pattern would achieve that same logic might have completely different and interchangeable views.
 # About
 In this Demo, i am using :
-# 1.Retrofit Library :-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-# 2 RecyclerView ,Cardview  :-   compile 'com.android.support:recyclerview-v7:26.1.0', compile 'com.android.support:cardview-v7:26.1.0'
-# 3.Glide  for displaying the image. :-  compile 'com.github.bumptech.glide:glide:3.7.0'
-# 4.Room Persistence Library  :-   implementation "android.arch.persistence.room:runtime:1.0.0",annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
-# 5.JobScheduler :- compile 'com.birbit:android-priority-jobqueue:2.0.0-beta1'
-# 6.Event :-   compile 'org.greenrobot:eventbus:3.0.0'
+# 1.Retrofit Library :-    
+compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+# 2 RecyclerView ,Cardview  :-   
+compile 'com.android.support:recyclerview-v7:26.1.0', compile 'com.android.support:cardview-v7:26.1.0'
+# 3.Glide  for displaying the image. :-  
+compile 'com.github.bumptech.glide:glide:3.7.0'
+# 4.Room Persistence Library  :-   
+implementation "android.arch.persistence.room:runtime:1.0.0",annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+# 5.JobScheduler :- 
+compile 'com.birbit:android-priority-jobqueue:2.0.0-beta1'
+# 6.Event :-   
+compile 'org.greenrobot:eventbus:3.0.0'
 
 
