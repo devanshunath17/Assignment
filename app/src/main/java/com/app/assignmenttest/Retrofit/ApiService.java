@@ -1,8 +1,9 @@
 package com.app.assignmenttest.Retrofit;
 
 
-import com.app.assignmenttest.Model.NameOfFacts;
+
 import com.app.assignmenttest.Utils.StaticData;
+import com.app.assignmenttest.entity.NameOfFacts;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

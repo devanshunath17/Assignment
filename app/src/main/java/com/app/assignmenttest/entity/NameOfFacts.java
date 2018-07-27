@@ -1,4 +1,4 @@
-package com.app.assignmenttest.Model;
+package com.app.assignmenttest.entity;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -15,7 +15,7 @@ public class NameOfFacts {
     private String title;
     @SerializedName("rows")
     @Expose
-    private ArrayList<DescOfFacts> rows = null;
+    private ArrayList<ListItem> rows = null;
 
     public String getTitle() {
         return title;
@@ -25,11 +25,11 @@ public class NameOfFacts {
         this.title = title;
     }
 
-    public ArrayList<DescOfFacts> getRows() {
+    public ArrayList<ListItem> getRows() {
         return rows;
     }
 
-    public void setRows(ArrayList<DescOfFacts> rows) {
+    public void setRows(ArrayList<ListItem> rows) {
         this.rows = rows;
     }
 }

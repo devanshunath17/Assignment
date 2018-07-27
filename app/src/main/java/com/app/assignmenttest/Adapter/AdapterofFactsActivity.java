@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.assignmenttest.Model.DescOfFacts;
+
 import com.app.assignmenttest.R;
+import com.app.assignmenttest.entity.ListItem;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 
 public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsActivity.MyViewHolder> {
 
-    private ArrayList<DescOfFacts> factsList;
+    private ArrayList<ListItem> factsList;
     private Context mcontaxt;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -40,7 +41,7 @@ public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsA
     }
 
 
-    public AdapterofFactsActivity(Context mcontaxt, ArrayList<DescOfFacts> factslist) {
+    public AdapterofFactsActivity(Context mcontaxt, ArrayList<ListItem> factslist) {
         this.factsList = factslist;
         this.mcontaxt = mcontaxt;
     }
@@ -55,13 +56,13 @@ public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsA
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        DescOfFacts facts = factsList.get(position);
+        ListItem facts = factsList.get(position);
         holder.title.setText(facts.getTitle());
         if (!TextUtils.isEmpty(facts.getDescription()))
             holder.txtdescription.setText(facts.getDescription().toString().trim());
 /*for displaying the Image
 * */
-        Glide.with(mcontaxt).load(facts.getImageHref())
+        Glide.with(mcontaxt).load(facts.getImage())
                 .thumbnail(0.5f)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
