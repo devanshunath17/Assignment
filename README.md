@@ -1,5 +1,12 @@
 # Assignment
 This is a demo project to demonstrate the Recycler View  using Retrofit and to show how to use  Android Architecture component Room  to access SQLite database on device for reading and writing data. This example also shows how to use LiveData and ViewModel with Room to build reactive, well performing and easy to maintain applications.
+
+#### The app has following packages:
+1. **data**: It contains all the data accessing and manipulating components.
+2. **di**: Dependency providing classes using Dagger2.
+3. **ui**: View classes along with their corresponding ViewModel.
+4. **utils**: Utility classes.
+
 # Model View Presenter
 The MVP Designe pattern allows separate the presentation layer from the logic , so that everything about how the interface works is separated from how we represent it on screen. Ideally the MVP pattern would achieve that same logic might have completely different and interchangeable views.
 # About
