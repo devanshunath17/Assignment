@@ -7,6 +7,15 @@ This is a demo project to demonstrate the Recycler View  using Retrofit and to s
 3. **ui**: View classes along with their corresponding ViewModel.
 4. **utils**: Utility classes.
 
+### Library reference resources:
+1. RxJava2: https://github.com/amitshekhariitbhu/RxJava2-Android-Samples
+2. Dagger2: https://github.com/MindorksOpenSource/android-dagger2-example
+3. FastAndroidNetworking: https://github.com/amitshekhariitbhu/Fast-Android-Networking
+4. PlaceHolderView: https://github.com/janishar/PlaceHolderView
+5. AndroidDebugDatabase: https://github.com/amitshekhariitbhu/Android-Debug-Database
+6. Calligraphy: https://github.com/chrisjenx/Calligraphy
+7. Room: https://developer.android.com/topic/libraries/architecture/room.html
+
 # Model View Presenter
 The MVP Designe pattern allows separate the presentation layer from the logic , so that everything about how the interface works is separated from how we represent it on screen. Ideally the MVP pattern would achieve that same logic might have completely different and interchangeable views.
 # About
