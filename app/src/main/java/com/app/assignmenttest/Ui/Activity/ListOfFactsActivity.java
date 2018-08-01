@@ -30,43 +30,33 @@ public class ListOfFactsActivity extends AppCompatActivity implements SetTitle {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facts_list);
-       // EventBus.getDefault().register(this);
-        //inItView();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
-       // EventBus.getDefault().register(this);
 
         ListOfFactsFragment myFragment = new ListOfFactsFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         replaceFragment(R.id.container, myFragment, ListOfFactsFragment.class.getSimpleName());
         transaction.commit();
 
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-
     }
 
     /* common method replace the fragment
     * */
     protected void replaceFragment(@IdRes int container, Fragment fragment, String tag) {
-        //getFragmentManager().beginTransaction().replace(container, fragment, tag).addToBackStack(null).commit();
         getFragmentManager().beginTransaction().replace(container, fragment, tag).commit();
 
     }
-
 
     @Override
     public void onTitle(String Title) {
         actionBar.setTitle(Title);
     }
-
 
     @Override
     public void onBackPressed() {

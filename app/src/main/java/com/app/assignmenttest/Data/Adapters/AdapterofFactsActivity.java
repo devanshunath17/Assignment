@@ -30,7 +30,6 @@ public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsA
         private TextView title, txtdescription;
         private ImageView list_image;
 
-
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.txttitle);
@@ -39,7 +38,6 @@ public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsA
 
         }
     }
-
 
     public AdapterofFactsActivity(Context mcontaxt, ArrayList<ListItem> factslist) {
         this.factsList = factslist;
@@ -60,14 +58,13 @@ public class AdapterofFactsActivity extends RecyclerView.Adapter<AdapterofFactsA
         holder.title.setText(facts.getTitle());
         if (!TextUtils.isEmpty(facts.getDescription()))
             holder.txtdescription.setText(facts.getDescription().toString().trim());
-/*for displaying the Image
-* */
+
+         /*for displaying the Image*/
         Glide.with(mcontaxt).load(facts.getImage())
                 .thumbnail(0.5f)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.list_image);
-
     }
 
     @Override

@@ -1,15 +1,15 @@
-package com.app.assignmenttest.job;
+package com.app.assignmenttest.observer.job;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import com.app.assignmenttest.Retrofit.ApiClient;
-import com.app.assignmenttest.Retrofit.ApiService;
+import com.app.assignmenttest.Data.Retrofit.ApiClient;
+import com.app.assignmenttest.Data.Retrofit.ApiService;
 import com.app.assignmenttest.Utils.DatabaseInitializer;
 import com.app.assignmenttest.Utils.NetworkException;
 import com.app.assignmenttest.Utils.Preference;
 import com.app.assignmenttest.Utils.StaticData;
-import com.app.assignmenttest.database.AppDatabase;
+import com.app.assignmenttest.Data.db.database.AppDatabase;
 import com.app.assignmenttest.entity.ListItem;
 import com.app.assignmenttest.entity.NameOfFacts;
 import com.birbit.android.jobqueue.Job;
@@ -28,7 +28,6 @@ import retrofit2.Call;
 public class FetchListFromserver extends Job {
     private boolean reload;
     private boolean loadMore;
-
     transient Context context;
     public static final String TAG = FetchListFromserver.class.getCanonicalName();
 
@@ -67,7 +66,6 @@ public class FetchListFromserver extends Job {
     }
     @Override
     protected void onCancel(int cancelReason, @Nullable Throwable throwable) {
-     //   EventBus.getDefault().post(new GetCuisineEvent(0, "Request Cancel", reload, loadMore));
     }
     @Override
     protected RetryConstraint shouldReRunOnThrowable(@NonNull Throwable throwable, int runCount, int maxRunCount) {

@@ -43,14 +43,15 @@ public class ListOfFactsFragment extends Fragment {
     private View view;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
-
     private ArrayList<ListItem> factsList = new ArrayList<ListItem>();
     private AdapterofFactsActivity mAdapter;
     private ProgressBar progress;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_list, container, false);
+
         inItView(view);
+
         String title = Preference.getInstance(getActivity()).getString(StaticData.TITLE);
         if (!TextUtils.isEmpty(title)) {
             if (getActivity() != null) {
@@ -67,7 +68,6 @@ public class ListOfFactsFragment extends Fragment {
         } else {
             fireJob();
         }
-
         return view;
     }
 
@@ -93,21 +93,17 @@ public class ListOfFactsFragment extends Fragment {
         progress = (ProgressBar) view.findViewById(R.id.progress);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 
-
-/*for refreshing the List
-* */
+        /*for refreshing the List
+        * */
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
                 // implement Handler to wait for 3 seconds and then update UI means update value of TextView
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         // cancle the Visual indication of a refresh
                         swipeRefreshLayout.setRefreshing(false);
-
-                        //callApi();
                         AppDatabase db = AppDatabase.getAppDatabase(getActivity());
                         List<ListItem> listItemList = db.userDao().getAll();
                         if (listItemList.size() > 0) {
@@ -126,18 +122,15 @@ public class ListOfFactsFragment extends Fragment {
 
     }
 
-/*
-* this event call when we retrive the data from server
-* */
+    /*
+     * this event call when we retrive the data from server
+     * */
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(GetList event) {
         factsList.clear();
         List<ListItem> list = event.getListItemList();
         factsList.addAll(list);
-
         UpdateUI();
-
-
     }
 
     /*

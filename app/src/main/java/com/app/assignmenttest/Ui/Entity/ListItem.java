@@ -1,4 +1,4 @@
-package com.app.assignmenttest.entity;
+package com.app.assignmenttest.Ui.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -6,6 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Devanshu 27 july 2018
  */
@@ -15,14 +16,21 @@ public class ListItem {
 
     @PrimaryKey(autoGenerate = true)
     private int uid;
+
     @SerializedName("title")
     @Expose
     @ColumnInfo(name = "title")
     private String title;
+
     @SerializedName("description")
     @Expose
     @ColumnInfo(name = "description")
     private String description;
+
+    @SerializedName("imageHref")
+    @Expose
+    @ColumnInfo(name = "imageHref")
+    private String image;
 
     public String getImage() {
         return image;
@@ -31,10 +39,6 @@ public class ListItem {
     public void setImage(String image) {
         this.image = image;
     }
-    @SerializedName("imageHref")
-    @Expose
-    @ColumnInfo(name = "imageHref")
-    private String image;
 
     public int getUid() {
         return uid;
@@ -59,11 +63,6 @@ public class ListItem {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
-
-
 
 
 }

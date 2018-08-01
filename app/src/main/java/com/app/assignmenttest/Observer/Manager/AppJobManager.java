@@ -16,7 +16,7 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.app.assignmenttest.manager;
+package com.app.assignmenttest.observer.manager;
 
 import android.content.Context;
 import android.os.Build;
@@ -99,7 +99,6 @@ public class AppJobManager {
                 }
             }
             mJobManager = new JobManager(builder.build());
-
         }
     }
 

@@ -1,8 +1,7 @@
-package com.app.assignmenttest.event;
+package com.app.assignmenttest.observer.event;
 
 import com.app.assignmenttest.entity.ListItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

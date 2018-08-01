@@ -1,15 +1,13 @@
-package com.app.assignmenttest.manager;
+package com.app.assignmenttest.observer.manager;
 
 import android.support.annotation.NonNull;
-
 import com.birbit.android.jobqueue.JobManager;
-import com.birbit.android.jobqueue.scheduling.FrameworkJobSchedulerService;
+import com.birbit.android.jobqueue.scheduling.GcmJobSchedulerService;
 
 /**
  * Created by Devanshu 26 july 2018
  */
-
-public class AppJobService extends FrameworkJobSchedulerService {
+public class AppGcmJobService extends GcmJobSchedulerService {
 
     @NonNull
     @Override

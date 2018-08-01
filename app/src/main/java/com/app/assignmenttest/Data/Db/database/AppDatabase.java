@@ -1,11 +1,10 @@
-package com.app.assignmenttest.database;
+package com.app.assignmenttest.Data.db.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.app.assignmenttest.dao.ListItemDao;
 import com.app.assignmenttest.entity.ListItem;
 
 
