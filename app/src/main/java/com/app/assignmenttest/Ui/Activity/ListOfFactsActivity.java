@@ -1,4 +1,4 @@
-package com.app.assignmenttest.Activity;
+package com.app.assignmenttest.Ui.Activity;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -9,14 +9,10 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-import com.app.assignmenttest.Fragment.ListOfFactsFragment;
-import com.app.assignmenttest.Presenter.SetTitle;
+import com.app.assignmenttest.Ui.Fragment.ListOfFactsFragment;
+import com.app.assignmenttest.Utils.SetTitle;
 import com.app.assignmenttest.R;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 
 /**

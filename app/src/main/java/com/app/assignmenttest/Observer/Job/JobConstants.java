@@ -1,4 +1,4 @@
-package com.app.assignmenttest.observer.job;
+package com.app.assignmenttest.Observer.Job;
 
 /**
  * Created by Devanshu 26 july 2018

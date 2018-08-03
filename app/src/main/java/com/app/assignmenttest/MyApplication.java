@@ -2,7 +2,7 @@ package com.app.assignmenttest;
 
 import android.app.Application;
 
-import com.app.assignmenttest.manager.AppJobManager;
+import com.app.assignmenttest.Observer.Manager.AppJobManager;
 
 /**
  * Created by Devanshu on 27/7/18.
@@ -18,6 +18,5 @@ public class MyApplication extends Application {
     }
     private void initApp() {
         AppJobManager.getJobManager(this);
-
     }
 }

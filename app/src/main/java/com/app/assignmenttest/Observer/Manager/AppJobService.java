@@ -1,4 +1,4 @@
-package com.app.assignmenttest.observer.manager;
+package com.app.assignmenttest.Observer.Manager;
 
 import android.support.annotation.NonNull;
 

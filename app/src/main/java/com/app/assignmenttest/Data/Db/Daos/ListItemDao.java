@@ -1,4 +1,4 @@
-package com.app.assignmenttest.Data.db.Daos;
+package com.app.assignmenttest.Data.Db.Daos;
 
 
 import android.arch.persistence.room.Dao;
@@ -6,7 +6,7 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
-import com.app.assignmenttest.Ui.entity.ListItem;
+import com.app.assignmenttest.Ui.Entity.ListItem;
 
 import java.util.List;
 

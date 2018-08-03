@@ -1,17 +1,17 @@
-package com.app.assignmenttest.observer.job;
+package com.app.assignmenttest.Observer.Job;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.app.assignmenttest.Data.Retrofit.ApiClient;
 import com.app.assignmenttest.Data.Retrofit.ApiService;
+import com.app.assignmenttest.Ui.Entity.ListItem;
+import com.app.assignmenttest.Ui.Entity.NameOfFacts;
 import com.app.assignmenttest.Utils.DatabaseInitializer;
 import com.app.assignmenttest.Utils.NetworkException;
 import com.app.assignmenttest.Utils.Preference;
 import com.app.assignmenttest.Utils.StaticData;
-import com.app.assignmenttest.Data.db.database.AppDatabase;
-import com.app.assignmenttest.entity.ListItem;
-import com.app.assignmenttest.entity.NameOfFacts;
+import com.app.assignmenttest.Data.Db.database.AppDatabase;
 import com.birbit.android.jobqueue.Job;
 import com.birbit.android.jobqueue.Params;
 import com.birbit.android.jobqueue.RetryConstraint;

@@ -1,6 +1,8 @@
-package com.app.assignmenttest.observer.event;
+package com.app.assignmenttest.Observer.Event;
 
-import com.app.assignmenttest.entity.ListItem;
+
+
+import com.app.assignmenttest.Ui.Entity.ListItem;
 
 import java.util.List;
 

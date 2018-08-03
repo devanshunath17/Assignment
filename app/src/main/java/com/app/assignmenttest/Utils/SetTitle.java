@@ -1,4 +1,4 @@
-package com.app.assignmenttest.Presenter;
+package com.app.assignmenttest.Utils;
 
 /**
  * Created by oem on 17/7/18.

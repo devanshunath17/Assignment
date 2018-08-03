@@ -1,11 +1,12 @@
-package com.app.assignmenttest.Data.db.database;
+package com.app.assignmenttest.Data.Db.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.app.assignmenttest.entity.ListItem;
+import com.app.assignmenttest.Data.Db.Daos.ListItemDao;
+import com.app.assignmenttest.Ui.Entity.ListItem;
 
 
 @Database(entities = {ListItem.class}, version = 1)

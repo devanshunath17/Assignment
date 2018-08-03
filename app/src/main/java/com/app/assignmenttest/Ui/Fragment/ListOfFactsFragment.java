@@ -1,11 +1,10 @@
-package com.app.assignmenttest.Fragment;
+package com.app.assignmenttest.Ui.Fragment;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,19 +14,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import com.app.assignmenttest.Activity.ListOfFactsActivity;
-import com.app.assignmenttest.Adapter.AdapterofFactsActivity;
+import com.app.assignmenttest.Data.Adapters.AdapterofFactsActivity;
+import com.app.assignmenttest.Ui.Activity.ListOfFactsActivity;
 import com.app.assignmenttest.R;
+import com.app.assignmenttest.Ui.Entity.ListItem;
 import com.app.assignmenttest.Utils.Preference;
 import com.app.assignmenttest.Utils.StaticData;
-import com.app.assignmenttest.database.AppDatabase;
-import com.app.assignmenttest.entity.ListItem;
-import com.app.assignmenttest.event.GetList;
-import com.app.assignmenttest.job.FetchListFromserver;
-import com.app.assignmenttest.manager.AppJobManager;
-
+import com.app.assignmenttest.Data.Db.database.AppDatabase;
+import com.app.assignmenttest.Observer.Event.GetList;
+import com.app.assignmenttest.Observer.Job.FetchListFromserver;
+import com.app.assignmenttest.Observer.Manager.AppJobManager;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -72,9 +69,15 @@ public class ListOfFactsFragment extends Fragment {
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
-        EventBus.getDefault().register(this);
+
     }
 
     @Override

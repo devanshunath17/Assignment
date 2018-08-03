@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activity.ListOfFactsActivity"
+        <activity android:name=".Ui.Activity.ListOfFactsActivity"
             android:theme="@style/AppTheme.NoActionBar"
 
             >
@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
         <service
-            android:name="com.app.assignmenttest.manager.AppJobService"
+            android:name=".Observer.Manager.AppJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
-            android:name="com.app.assignmenttest.manager.AppGcmJobService"
+            android:name=".Observer.Manager.AppGcmJobService"
             android:exported="true"
             android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
             <intent-filter>

@@ -1,9 +1,9 @@
-package com.app.assignmenttest.Retrofit;
+package com.app.assignmenttest.Data.Retrofit;
 
 
 
+import com.app.assignmenttest.Ui.Entity.NameOfFacts;
 import com.app.assignmenttest.Utils.StaticData;
-import com.app.assignmenttest.entity.NameOfFacts;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

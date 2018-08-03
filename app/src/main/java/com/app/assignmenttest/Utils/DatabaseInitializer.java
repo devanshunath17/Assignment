@@ -4,10 +4,9 @@ package com.app.assignmenttest.Utils;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
-
-import com.app.assignmenttest.database.AppDatabase;
-import com.app.assignmenttest.entity.ListItem;
-import com.app.assignmenttest.event.GetList;
+import com.app.assignmenttest.Data.Db.database.AppDatabase;
+import com.app.assignmenttest.Observer.Event.GetList;
+import com.app.assignmenttest.Ui.Entity.ListItem;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -28,8 +27,6 @@ public class DatabaseInitializer {
         populateWithTestData(db);
     }
 
-
-
     private ListItem addItems(final AppDatabase db, ListItem listItem) {
         db.userDao().insertAll(listItem);
         return listItem;
@@ -49,14 +46,12 @@ public class DatabaseInitializer {
                 listItem.setDescription(factsList.get(i).getDescription());
             if (factsList.get(i).getImage() != null)
                 listItem.setImage(factsList.get(i).getImage());
-
             addItems(db, listItem);
         }
 
 
         List<ListItem> listItemList = db.userDao().getAll();
         Log.d(DatabaseInitializer.TAG, "Rows Count: " + listItemList.size());
-
         EventBus.getDefault().post(new GetList(listItemList));
     }
 
